@@ -1,0 +1,39 @@
+<header class="site-header">
+  <nav class="nav container" aria-label="Main navigation">
+    <a class="brand" href="#home" aria-label="The Developers home">
+      <span class="brand-mark" aria-hidden="true">3</span>
+      The Developers
+    </a>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#projects">Projects</a>
+      <a href="#strengths">Strengths</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <a class="nav-cta" href="#contact">Let’s talk <span>↗</span></a>
+  </nav>
+</header>
+
+<style>
+  .site-header { position: absolute; z-index: 20; inset: 0 0 auto; background: transparent; }
+  .nav { height: 92px; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; border-bottom: 1px solid var(--line); }
+  .brand { display: inline-flex; align-items: center; gap: 10px; width: fit-content; font-family: "Manrope", sans-serif; font-size: 20px; font-weight: 800; letter-spacing: -0.04em; }
+  .brand-mark { width: 44px; height: 44px; display: grid; place-items: center; border: 1px solid var(--ink); border-radius: 50%; background: var(--accent-brown); color: var(--white); font-size: 13px; letter-spacing: -.06em; }
+  .nav-links { display: flex; gap: clamp(16px, 2.4vw, 32px); font-size: 14px; font-weight: 700; }
+  .nav-links a, .nav-cta { transition: color .2s ease, background .2s ease; }
+  .nav-links a:hover { color: var(--accent-brown); text-decoration: underline; text-decoration-color: var(--accent-brown); text-decoration-thickness: 2px; text-underline-offset: 5px; }
+  .nav-cta:hover { background: var(--accent-brown); color: var(--white); }
+  .nav-cta { justify-self: end; display: inline-flex; align-items: center; gap: 22px; font-size: 14px; font-weight: 800; border-bottom: 2px solid var(--accent-brown); padding-bottom: 5px; }
+  .nav-cta span { font-size: 16px; }
+  @media (max-width: 900px) {
+    .nav { height: auto; min-height: 92px; grid-template-columns: 1fr auto; padding-block: 10px; }
+    .brand { grid-column: 1; grid-row: 1; }
+    .nav-links { grid-column: 1 / -1; grid-row: 2; justify-content: space-between; gap: 12px; font-size: 13px; }
+    .nav-cta { grid-column: 2; grid-row: 1; }
+  }
+  @media (max-width: 650px) {
+    .nav { min-height: 112px; } .nav-cta { gap: 8px; } .brand { font-size: 18px; }
+    .nav-links { font-size: 11px; }
+  }
+</style>

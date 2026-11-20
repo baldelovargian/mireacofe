@@ -1,0 +1,55 @@
+---
+import Card from "../../../components/Card.astro";
+
+const services = [
+  {
+    number: "01",
+    title: "Website development",
+    description: "Responsive, accessible pages built around your goals. I break the work into clear steps and keep the experience easy to use.",
+    items: ["Landing pages", "Responsive layouts", "Semantic HTML, CSS & JavaScript"],
+  },
+  {
+    number: "02",
+    title: "UI implementation",
+    description: "I turn designs or ideas into clean interfaces, with careful attention to detail and consistency across screen sizes.",
+    items: ["Astro components", "Interactive interfaces", "CSS styling & animation"],
+  },
+  {
+    number: "03",
+    title: "Website improvements",
+    description: "I can refine existing pages, address layout issues, and improve navigation through thoughtful iteration and clear communication.",
+    items: ["Layout fixes", "Responsive refinements", "Browser testing"],
+  },
+];
+---
+
+<section class="services" id="services">
+  <div class="container">
+    <div class="services-heading">
+      <div>
+        <p class="eyebrow">02 — Services</p>
+        <h2 class="section-title">How I can help<br />with your website.</h2>
+      </div>
+      <p class="services-intro">From the first idea to the final details, I bring curiosity, clear communication, and care to the work.</p>
+    </div>
+    <div class="services-grid">
+      {services.map((service) => <Card variant="service" {...service} />)}
+    </div>
+  </div>
+</section>
+
+<style>
+  .services { padding: 130px 0; background: var(--black); color: var(--white); }
+  .services-heading { display: grid; grid-template-columns: 1fr 1fr; align-items: end; gap: 48px; margin-bottom: 60px; }
+  .services-heading .eyebrow, .services-heading .section-title { color: var(--white); }
+  .services-intro { max-width: 430px; margin: 0 0 8px; color: #dedede; font-size: 16px; line-height: 1.7; }
+  .services-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+  @media (max-width: 850px) {
+    .services { padding: 96px 0; }
+    .services-grid { grid-template-columns: 1fr; }
+    .services-grid :global(.card--service) { min-height: 0; }
+  }
+  @media (max-width: 700px) {
+    .services-heading { grid-template-columns: 1fr; gap: 24px; margin-bottom: 40px; }
+  }
+</style>

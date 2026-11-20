@@ -1,0 +1,41 @@
+<section class="about" id="about">
+  <div class="container about-grid">
+    <div class="about-label">
+      <p class="eyebrow">01 — About</p>
+    </div>
+    <div class="about-content">
+      <h2 class="section-title">A developer who values clarity.</h2>
+      <div class="about-bottom">
+        <div class="story-copy">
+          <p class="story-lead">I’m Gian Baldelovar, a developer focused on building practical, user-friendly websites.</p>
+          <p>I enjoy turning ideas into clean interfaces, learning how the pieces of the web fit together, and improving a project one detail at a time.</p>
+          <p>My approach balances curiosity with care: understand the problem, keep the experience simple, and write code that is clear to work with.</p>
+        </div>
+        <div class="about-stat">
+          <strong>Web</strong>
+          <span>thoughtful ideas<br />made interactive</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .about { padding: 140px 0; background: var(--paper); border-top: 1px solid var(--line); }
+  .about-grid { display: grid; grid-template-columns: 25% 75%; }
+  .about-label { padding-top: 8px; }
+  .about-content { border-left: 1px solid var(--line); padding-left: 58px; }
+  .about-bottom { display: grid; grid-template-columns: 1fr 220px; gap: 64px; align-items: end; margin-top: 52px; }
+  .story-copy { max-width: 570px; }
+  .story-copy p { margin: 0; color: var(--muted); font-size: 16px; line-height: 1.75; }
+  .story-copy p + p { margin-top: 18px; }
+  .story-copy .story-lead { margin-bottom: 22px; color: var(--ink); font-family: "Manrope", sans-serif; font-size: 21px; font-weight: 700; line-height: 1.45; }
+  .about-stat { display: flex; align-items: flex-end; gap: 14px; padding: 18px 0 4px 20px; border-left: 3px solid var(--accent-brown); }
+  .about-stat strong { font-family: "Manrope", sans-serif; font-size: 58px; line-height: .8; letter-spacing: -.06em; }
+  .about-stat span { color: var(--muted); font-size: 12px; line-height: 1.5; text-transform: uppercase; }
+  @media (max-width: 760px) {
+    .about { padding: 90px 0; } .about-grid { display: block; } .about-label { margin-bottom: 38px; }
+    .about-content { border-left: 0; border-top: 1px solid var(--line); padding: 38px 0 0; }
+    .about-bottom { grid-template-columns: 1fr; gap: 38px; margin-top: 34px; }
+  }
+</style>

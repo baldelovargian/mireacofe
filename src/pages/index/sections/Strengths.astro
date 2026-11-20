@@ -1,0 +1,56 @@
+---
+import Card from "../../../components/Card.astro";
+
+const programmers = [
+  {
+    number: "01",
+    title: "Mariane Guban",
+    description: "Sample bio: Enjoys creating clear, welcoming interfaces.",
+    items: ["HTML & CSS", "UI design", "Responsive layouts"],
+  },
+  {
+    number: "02",
+    title: "Miles Martin Pabon",
+    description: "Sample bio: Likes turning ideas into practical website features.",
+    items: ["JavaScript", "Astro", "Problem solving"],
+  },
+  {
+    number: "03",
+    title: "Gian Baldelovar",
+    description: "Sample bio: Interested in building responsive web experiences.",
+    items: ["Astro", "Frontend development", "CSS animation"],
+  },
+];
+---
+
+<section class="strengths" id="strengths">
+  <div class="container">
+    <div class="strengths-heading">
+      <div>
+        <p class="eyebrow">04 — Meet the programmers</p>
+        <h2 class="section-title">Our skills and strengths.</h2>
+      </div>
+      <p class="strengths-note">Sample profiles only. Update the skills and bios to match each programmer.</p>
+    </div>
+    <div class="strengths-grid">
+      {programmers.map((programmer) => <Card variant="strength" {...programmer} />)}
+    </div>
+  </div>
+</section>
+
+<style>
+  .strengths { padding: 130px 0; background: var(--paper); }
+  .strengths-heading { display: flex; align-items: flex-end; justify-content: space-between; gap: 36px; margin-bottom: 58px; }
+  .strengths-heading .eyebrow { align-self: flex-start; }
+  .strengths-note { max-width: 350px; margin: 0 0 8px; color: var(--muted); font-size: 14px; line-height: 1.6; }
+  .strengths-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid var(--ink); }
+  @media (max-width: 850px) {
+    .strengths { padding: 96px 0; }
+    .strengths-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+  @media (max-width: 600px) {
+    .strengths-heading { display: block; }
+    .strengths-note { margin-top: 20px; }
+    .strengths-grid { grid-template-columns: 1fr; }
+  }
+</style>
