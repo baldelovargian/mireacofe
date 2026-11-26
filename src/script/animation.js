@@ -1,5 +1,5 @@
 const revealItems = document.querySelectorAll(
-  ".hero-copy, .hero-art, .about-content, .strengths-heading, .card--strength, .services-heading, .card--service, .projects-heading, .card--project, .team-heading, .team-member, .process-heading, .process-step, .contact-main"
+  ".hero-copy, .hero-art, .about-content, .strengths-heading, .card--strength, .services-heading, .card--service, .projects-heading, .card--project, .project-card, .team-heading, .team-member, .process-heading, .process-step, .contact-main"
 );
 
 revealItems.forEach((item, index) => {
@@ -13,7 +13,8 @@ if ("IntersectionObserver" in window) {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           entry.target.classList.add("is-visible");
-          observer.unobserve(entry.target);
+        } else {
+          entry.target.classList.remove("is-visible");
         }
       });
     },

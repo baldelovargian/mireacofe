@@ -39,7 +39,19 @@ const services = [
 </section>
 
 <style>
-  .services { padding: 130px 0; background: var(--black); color: var(--white); }
+  .services {
+    position: relative;
+    padding: 130px 0;
+    overflow: hidden;
+    background:
+      linear-gradient(135deg, transparent 0 70%, rgba(193, 139, 104, .06) 70% 70.2%, transparent 70.2%),
+      linear-gradient(rgba(255,255,255,.028) 1px, transparent 1px),
+      var(--black);
+    background-size: 100% 100%, 40px 40px, auto;
+    color: var(--white);
+  }
+  .services::before { content: ""; position: absolute; z-index: 0; inset: 0; background: url("/developer-devices.svg") no-repeat 96% 24% / min(70vw, 820px) auto; opacity: .3; filter: blur(5px); pointer-events: none; }
+  .services > .container { position: relative; z-index: 1; }
   .services-heading { display: grid; grid-template-columns: 1fr 1fr; align-items: end; gap: 48px; margin-bottom: 60px; }
   .services-heading .eyebrow, .services-heading .section-title { color: var(--white); }
   .services-intro { max-width: 430px; margin: 0 0 8px; color: #dedede; font-size: 16px; line-height: 1.7; }

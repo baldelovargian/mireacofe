@@ -14,7 +14,7 @@
       <div class="code-window">
         <div class="window-bar"><span></span><span></span><span></span><p>the-developers / portfolio.astro</p></div>
         <pre><code><span>const</span> team = &#123;
-  members: [<b>"Mariane Joy"</b>, <b>"Miles Pabon"</b>, <b>"Gian Baldelovar"</b>],
+  members: [<b>"Gian Baldelovar"</b>, <b>"Marianne Guban"</b>, <b>"Miles Pabon"</b>],
   focus: <b>"Responsive web experiences"</b>,
   tools: [<b>"Astro"</b>, <b>"JavaScript"</b>],
   mindset: <b>"Always learning"</b>
@@ -29,8 +29,27 @@
 </header>
 
 <style>
-  .hero { min-height: 760px; background: var(--cream); overflow: hidden; }
-  .hero-grid { min-height: 760px; display: grid; grid-template-columns: 56% 44%; align-items: center; padding-top: 132px; }
+  .hero {
+    position: relative;
+    min-height: 760px;
+    overflow: hidden;
+    background:
+      linear-gradient(rgba(33, 27, 23, .035) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(33, 27, 23, .035) 1px, transparent 1px),
+      var(--cream);
+    background-size: 48px 48px;
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    inset: 0;
+    background: url("/developer-devices.svg") no-repeat 98% 56% / min(78vw, 920px) auto;
+    opacity: .25;
+    filter: blur(5px);
+    pointer-events: none;
+  }
+  .hero-grid { position: relative; z-index: 1; min-height: 760px; display: grid; grid-template-columns: 56% 44%; align-items: center; padding-top: 132px; }
   .hero-copy { position: relative; z-index: 2; padding: 48px 0 70px; }
   .hero-copy h1 { margin: 0 0 28px; font-family: "Manrope", sans-serif; font-size: clamp(66px, 7.3vw, 100px); line-height: .94; letter-spacing: -.07em; }
   .hero-copy h1 em { color: var(--accent-brown); font-family: Georgia, serif; font-weight: 400; }

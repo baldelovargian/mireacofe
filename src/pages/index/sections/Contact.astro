@@ -116,7 +116,20 @@
 </script>
 
 <style>
-  .contact { padding: 100px 0 110px; background: var(--accent-brown); color: var(--white); scroll-margin-top: 78px; }
+  .contact {
+    position: relative;
+    overflow: hidden;
+    padding: 100px 0 110px;
+    background:
+      linear-gradient(rgba(255,255,255,.055) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,.055) 1px, transparent 1px),
+      var(--accent-brown);
+    background-size: 36px 36px;
+    color: var(--white);
+    scroll-margin-top: 78px;
+  }
+  .contact::before { content: ""; position: absolute; z-index: 0; inset: 0; background: url("/developer-devices.svg") no-repeat 5% 55% / min(74vw, 900px) auto; opacity: .3; filter: blur(5px); pointer-events: none; }
+  .contact > .container { position: relative; z-index: 1; }
   .contact-main { min-height: 390px; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: start; gap: 48px; }
   .contact-copy .eyebrow::before { background: var(--white); }
   .contact-copy h2 { margin: 0; font-family: "Manrope", sans-serif; font-size: clamp(54px, 5.2vw, 72px); line-height: .96; letter-spacing: -.07em; }

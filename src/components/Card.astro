@@ -7,9 +7,10 @@ interface Props {
   title: string;
   description: string;
   items?: readonly string[];
+  image?: string;
 }
 
-const { variant, number, title, description, items = [] } = Astro.props;
+const { variant, number, title, description, items = [], image } = Astro.props;
 ---
 
 <article class:list={["card", `card--${variant}`]}>
@@ -38,6 +39,11 @@ const { variant, number, title, description, items = [] } = Astro.props;
   {variant === "strength" && (
     <>
       <span class="card-number">{number}</span>
+      {image && (
+        <figure class="profile-image">
+          <img src={image} alt={title} />
+        </figure>
+      )}
       <h3>{title}</h3>
       <p>{description}</p>
       <ul class="strength-tags" aria-label={`Sample skills for ${title}`}>
@@ -154,12 +160,27 @@ const { variant, number, title, description, items = [] } = Astro.props;
   }
 
   .card--strength h3 {
-    margin-top: 24px;
+    margin: 16px 0 10px;
   }
 
   .card--strength p {
     max-width: 240px;
     color: var(--muted);
+  }
+
+  .profile-image {
+    width: 100%;
+    height: 300px;
+    margin: 18px 0 0;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    background: #eee;
+  }
+
+  .profile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 
   .strength-tags {

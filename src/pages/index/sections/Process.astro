@@ -33,7 +33,20 @@
 </section>
 
 <style>
-  .process { padding: 130px 0; background: var(--black); color: var(--white); }
+  .process {
+    position: relative;
+    padding: 130px 0;
+    overflow: hidden;
+    background:
+      radial-gradient(circle at 12% 82%, rgba(193,139,104,.12) 0 1px, transparent 2px),
+      radial-gradient(circle at 12% 82%, transparent 0 80px, rgba(193,139,104,.08) 81px 82px, transparent 83px),
+      linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px),
+      var(--black);
+    background-size: auto, auto, 48px 48px, auto;
+    color: var(--white);
+  }
+  .process::before { content: ""; position: absolute; z-index: 0; inset: 0; background: url("/developer-devices.svg") no-repeat 98% 75% / min(74vw, 900px) auto; opacity: .3; filter: blur(5px); pointer-events: none; }
+  .process > .container { position: relative; z-index: 1; }
   .process-heading { display: grid; grid-template-columns: 1fr 1fr; align-items: end; gap: 48px; margin-bottom: 60px; }
   .process-heading .eyebrow, .process-heading .section-title { color: var(--white); }
   .process-intro { max-width: 430px; margin: 0 0 8px; color: #dedede; font-size: 16px; line-height: 1.7; }
