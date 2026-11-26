@@ -1,5 +1,5 @@
 const revealItems = document.querySelectorAll(
-  ".hero-copy, .hero-art, .about-content, .services-heading, .card--service, .projects-heading, .card--project, .team-heading, .team-member, .strengths-heading, .card--strength, .contact-main"
+  ".hero-copy, .hero-art, .about-content, .strengths-heading, .card--strength, .services-heading, .card--service, .projects-heading, .card--project, .team-heading, .team-member, .process-heading, .process-step, .contact-main"
 );
 
 revealItems.forEach((item, index) => {

@@ -10,12 +10,15 @@ import Footer from "../components/Footer.astro";
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Gian Baldelovar — Developer Portfolio</title>
-		<meta name="description" content="Gian Baldelovar's developer portfolio: technical skills, personal strengths, selected work, and contact details." />
+		<title>The Developers — Web Design & Development</title>
+		<meta name="description" content="A developer team in Victorias City creating responsive, user-friendly websites with thoughtful design and dependable code." />
 	</head>
 	<body>
+		<a class="skip-link" href="#main-content">Skip to content</a>
 		<Header />
-		<slot />
+		<main id="main-content">
+			<slot />
+		</main>
 		<Footer />
 	</body>
 </html>

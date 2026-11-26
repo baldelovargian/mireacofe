@@ -11,16 +11,11 @@ const projects = [
   {
     number: "02",
     title: "Developer Portfolio",
-    description: "A personal portfolio presenting technical skills, selected work, and strengths in a responsive layout.",
+    description: "A responsive portfolio introducing our team, selected work, and approach to website development.",
     items: ["Astro", "TypeScript", "CSS", "Responsive UI"],
   },
 ] as const;
 
-const programmers = [
-  { initials: "MG", name: "Mariane Guban" },
-  { initials: "MP", name: "Miles Martin Pabon" },
-  { initials: "GB", name: "Gian Baldelovar" },
-] as const;
 ---
 
 <section class="projects" id="projects">
@@ -35,24 +30,6 @@ const programmers = [
     <div class="projects-grid">
       {projects.map((project) => <Card variant="project" {...project} />)}
     </div>
-
-    <div class="team" id="team">
-      <div class="team-heading">
-        <p class="eyebrow">The people behind this website</p>
-        <h3>Meet the programmers.</h3>
-      </div>
-      <ul class="team-grid" aria-label="Website programmers">
-        {programmers.map((programmer) => (
-          <li class="team-member">
-            <span class="team-initials" aria-hidden="true">{programmer.initials}</span>
-            <div>
-              <h4>{programmer.name}</h4>
-              <p>Programmer</p>
-            </div>
-          </li>
-        ))}
-      </ul>
-    </div>
   </div>
 </section>
 
@@ -61,20 +38,9 @@ const programmers = [
   .projects-heading { display: grid; grid-template-columns: 1fr 1fr; align-items: end; gap: 48px; margin-bottom: 60px; }
   .projects-intro { max-width: 390px; margin: 0 0 8px; color: var(--muted); font-size: 16px; line-height: 1.7; }
   .projects-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; }
-  .team { margin-top: 120px; }
-  .team-heading { margin-bottom: 32px; }
-  .team-heading .eyebrow { margin-bottom: 14px; }
-  .team-heading h3 { margin: 0; font-family: "Manrope", sans-serif; font-size: clamp(30px, 4vw, 46px); letter-spacing: -.05em; }
-  .team-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; margin: 0; padding: 0; list-style: none; }
-  .team-member { display: flex; align-items: center; gap: 18px; min-height: 112px; padding: 20px; border: 1px solid var(--line); background: var(--white); }
-  .team-initials { display: grid; flex: 0 0 56px; width: 56px; height: 56px; place-items: center; border-radius: 50%; background: var(--accent-brown); color: var(--white); font-family: Consolas, monospace; font-size: 15px; font-weight: 700; }
-  .team-member h4 { margin: 0 0 5px; font-family: "Manrope", sans-serif; font-size: 16px; }
-  .team-member p { margin: 0; color: var(--muted); font-size: 13px; }
   @media (max-width: 760px) {
     .projects { padding: 90px 0; }
     .projects-heading { grid-template-columns: 1fr; gap: 24px; margin-bottom: 40px; }
     .projects-grid { grid-template-columns: 1fr; }
-    .team { margin-top: 80px; }
-    .team-grid { grid-template-columns: 1fr; }
   }
 </style>
